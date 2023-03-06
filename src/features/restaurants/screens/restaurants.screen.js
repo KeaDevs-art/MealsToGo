@@ -24,11 +24,15 @@ const SearchContainer = styled(View)`
   padding: ${(props) => props.theme.space[3]};
 `;
 
+const SearchBar = styled(Searchbar)`
+  background-color: ${(props) => props.theme.colors.bg.primary};
+`;
+
 export const RestaurantsScreen = () => {
   return (
     <SafeArea>
       <SearchContainer>
-        <Searchbar />
+        <SearchBar />
       </SearchContainer>
       <RestaurantListContainer>
         <RestaurantInfoCard />
