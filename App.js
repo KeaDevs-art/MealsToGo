@@ -1,4 +1,3 @@
-/* eslint-disable react/react-in-jsx-scope */
 import React from "react";
 
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
@@ -12,7 +11,9 @@ import {
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 
 import { theme } from "./src/infrastructure/theme";
-import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
+import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
+import { LocationContextProvider } from "./src/services/location/location.context";
+import Navigation from "./src/infrastructure/navigation";
 
 // ------------------------------ Imports ----------------------- Imports --------------------------Imports --------------------
 
@@ -31,7 +32,11 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <RestaurantsScreen />
+        <LocationContextProvider>
+          <RestaurantsContextProvider>
+            <Navigation />
+          </RestaurantsContextProvider>
+        </LocationContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
