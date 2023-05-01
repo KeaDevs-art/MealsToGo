@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 import { LocationContext } from "../../../../services/location/location.context";
 
@@ -9,11 +9,16 @@ export const Search = () => {
   const { keyword, search } = useContext(LocationContext);
   const [searchKeyword, setSearchKeyword] = useState(keyword);
 
+  useEffect(() => {
+    setSearchKeyword(keyword);
+  }, [keyword]);
+
   return (
     <SearchContainer>
       <SearchBar
         placeholder="Search"
         value={searchKeyword}
+        icon="map"
         onSubmitEditing={() => {
           search(searchKeyword);
         }}

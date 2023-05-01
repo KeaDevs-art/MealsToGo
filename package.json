@@ -12,6 +12,7 @@
   "dependencies": {
     "@expo-google-fonts/lato": "^0.2.3",
     "@expo-google-fonts/oswald": "^0.2.3",
+    "@expo/cli": "^0.7.0",
     "@expo/webpack-config": "^0.17.2",
     "@react-navigation/bottom-tabs": "^6.5.7",
     "@react-navigation/native": "^6.1.6",
@@ -33,6 +34,7 @@
     "react-native-screens": "~3.18.0",
     "react-native-svg": "13.4.0",
     "react-native-web": "~0.18.9",
+    "react-native-webview": "11.23.1",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {

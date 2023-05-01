@@ -9,6 +9,7 @@ import star from "../../../../assets/star";
 import open from "../../../../assets/open";
 
 import { Spacer } from "../../../components/spacer/spacer.component";
+import { Favourite } from "../../../components/favourites/favourite.component";
 
 import {
   RestaurantCard,
@@ -41,13 +42,19 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
 
   return (
     <RestaurantCard>
+      <Favourite restaurant={restaurant} />
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       <Info>
         <Text variant="label">{name}</Text>
         <RatingAndStatus>
           <Rating>
             {ratingArray.map((_, idx) => (
-              <SvgXml key={`star-${placeId}-${idx}`} xml={star} width={20} height={20} />
+              <SvgXml
+                key={`star-${placeId}-${idx}`}
+                xml={star}
+                width={20}
+                height={20}
+              />
             ))}
           </Rating>
           <Status>
